@@ -1,7 +1,8 @@
 module "cs-common" {
+  
   source  = "terraform-google-modules/folders/google"
   version = "~> 5.0"
-
+  deletion_protection = false
   parent = "organizations/${var.org_id}"
   names = [
     "Common",
@@ -9,6 +10,7 @@ module "cs-common" {
 }
 
 locals {
+  deletion_protection = false
   folders_level_1 = compact(flatten([for parent, children in var.folders : length(children) == 0 ?
   [] : [for child, _ in children : join("/", [parent, child])]]))
 

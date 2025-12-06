@@ -1,0 +1,387 @@
+bindings:
+- members:
+  - group:gcp-billing-admins@smartrentalstsv.com.au
+  role: roles/billing.admin
+- members:
+  - domain:smartrentalstsv.com.au
+  - group:gcp-billing-admins@smartrentalstsv.com.au
+  role: roles/billing.creator
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - user:steven@smartrentalstsv.com.au
+  role: roles/billing.creator
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/billing.projectManager
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/billing.projectManager
+- members:
+  - group:gcp-organization-admins@smartrentalstsv.com.au
+  role: roles/billing.user
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/billing.user
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/billing.user
+- members:
+  - group:gcp-organization-admins@smartrentalstsv.com.au
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/cloudkms.admin
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  role: roles/cloudkms.admin
+- members:
+  - serviceAccount:service-org-403564791417@gcp-sa-csc-hpsa.iam.gserviceaccount.com
+  role: roles/cloudsecuritycompliance.serviceAgent
+- members:
+  - group:gcp-organization-admins@smartrentalstsv.com.au
+  role: roles/cloudsupport.admin
+- members:
+  - group:gcp-hybrid-connectivity-admins@smartrentalstsv.com.au
+  - group:gcp-vpc-network-admins@smartrentalstsv.com.au
+  role: roles/compute.networkAdmin
+- members:
+  - group:gcp-vpc-network-admins@smartrentalstsv.com.au
+  role: roles/compute.securityAdmin
+- members:
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/compute.viewer
+- members:
+  - group:gcp-vpc-network-admins@smartrentalstsv.com.au
+  role: roles/compute.xpnAdmin
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/compute.xpnAdmin
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/compute.xpnAdmin
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/config.agent
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/config.agent
+- members:
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/container.viewer
+- members:
+  - serviceAccount:service-org-403564791417@gcp-sa-ktd-hpsa.iam.gserviceaccount.com
+  role: roles/containerthreatdetection.serviceAgent
+- members:
+  - serviceAccount:service-org-403564791417@gcp-sa-dspm-hpsa.iam.gserviceaccount.com
+  role: roles/dspm.serviceAgent
+- members:
+  - group:gcp-organization-admins@smartrentalstsv.com.au
+  - user:mark@smartrentalstsv.com.au
+  role: roles/iam.organizationRoleAdmin
+- members:
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/iam.organizationRoleViewer
+- members:
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/iam.securityAdmin
+- members:
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/iam.securityReviewer
+- members:
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/iam.serviceAccountCreator
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountUser
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountUser
+- members:
+  - group:gcp-logging-monitoring-admins@smartrentalstsv.com.au
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/logging.admin
+- members:
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/logging.configWriter
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/logging.configWriter
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/logging.configWriter
+- members:
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/logging.privateLogViewer
+- members:
+  - group:gcp-logging-monitoring-viewers@smartrentalstsv.com.au
+  role: roles/logging.viewer
+- members:
+  - group:gcp-logging-monitoring-admins@smartrentalstsv.com.au
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/monitoring.admin
+- members:
+  - group:gcp-logging-monitoring-viewers@smartrentalstsv.com.au
+  role: roles/monitoring.viewer
+- members:
+  - group:gcp-organization-admins@smartrentalstsv.com.au
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/orgpolicy.policyAdmin
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/orgpolicy.policyAdmin
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/orgpolicy.policyAdmin
+- members:
+  - group:gcp-logging-monitoring-admins@smartrentalstsv.com.au
+  - group:gcp-organization-admins@smartrentalstsv.com.au
+  role: roles/pubsub.admin
+- members:
+  - group:gcp-organization-admins@smartrentalstsv.com.au
+  role: roles/resourcemanager.folderAdmin
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/resourcemanager.folderCreator
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/resourcemanager.folderCreator
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/resourcemanager.folderEditor
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/resourcemanager.folderEditor
+- members:
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/resourcemanager.folderIamAdmin
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/resourcemanager.folderIamAdmin
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/resourcemanager.folderIamAdmin
+- members:
+  - group:gcp-devops@smartrentalstsv.com.au
+  - group:gcp-hybrid-connectivity-admins@smartrentalstsv.com.au
+  - group:gcp-vpc-network-admins@smartrentalstsv.com.au
+  role: roles/resourcemanager.folderViewer
+- members:
+  - group:gcp-organization-admins@smartrentalstsv.com.au
+  - user:steven@smartrentalstsv.com.au
+  role: roles/resourcemanager.organizationAdmin
+- members:
+  - group:gcp-billing-admins@smartrentalstsv.com.au
+  role: roles/resourcemanager.organizationViewer
+- members:
+  - domain:smartrentalstsv.com.au
+  - group:gcp-organization-admins@smartrentalstsv.com.au
+  role: roles/resourcemanager.projectCreator
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/resourcemanager.projectCreator
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/resourcemanager.projectCreator
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/resourcemanager.projectDeleter
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/resourcemanager.projectDeleter
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/resourcemanager.projectIamAdmin
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/resourcemanager.projectIamAdmin
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/secretmanager.secretAccessor
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/secretmanager.secretAccessor
+- members:
+  - group:gcp-organization-admins@smartrentalstsv.com.au
+  - group:gcp-security-admins@smartrentalstsv.com.au
+  role: roles/securitycenter.admin
+- members:
+  - serviceAccount:service-org-403564791417@security-center-api.iam.gserviceaccount.com
+  role: roles/securitycenter.serviceAgent
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/serviceusage.serviceUsageConsumer
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/serviceusage.serviceUsageConsumer
+- condition:
+    expression: request.time < timestamp("2025-12-25T07:07:35.202Z")
+    title: 30 Day Expiration
+  members:
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/storage.objectUser
+- condition:
+    description: Google Cloud gave this service account this role to enable deployment
+      of your foundation from the console. This IAM policy expires 30 days after deployment,
+      which is 2025-12-30T12:03:04.223598Z
+    expression: request.time < timestamp('2025-12-30T12:03:04.223598Z')
+    title: Role required to deploy your foundation with expiration
+  members:
+  - serviceAccount:gcp-cloud-setup@cs-host-c6889db1289b4fba8e3d96.iam.gserviceaccount.com
+  - serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+  role: roles/storage.objectUser

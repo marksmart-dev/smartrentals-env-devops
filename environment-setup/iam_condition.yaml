@@ -1,0 +1,3 @@
+expression: "request.time < timestamp('2025-12-30T12:03:04.223598Z')"
+title: "Role required to deploy your foundation with expiration"
+description: "Google Cloud gave this service account this role to enable deployment of your foundation from the console. This IAM policy expires 30 days after deployment, which is 2025-12-30T12:03:04.223598Z"

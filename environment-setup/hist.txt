@@ -1,0 +1,16 @@
+ 1063  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/logging.configWriter" 
+ 1064  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/orgpolicy.policyAdmin" 
+ 1065  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/resourcemanager.folderIamAdmin" 
+ 1066  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/resourcemanager.folderCreator" 
+ 1067  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/resourcemanager.folderEditor" 
+ 1068  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/resourcemanager.projectIamAdmin" 
+ 1069  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/resourcemanager.projectCreator" 
+ 1070  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/resourcemanager.projectDeleter" 
+ 1071  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/serviceusage.serviceUsageConsumer" 
+ 1072  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/secretmanager.secretAccessor" 
+ 1073  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/iam.serviceAccountUser" 
+ 1074  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/storage.objectUser 
+ 1075  gcloud organizations add-iam-policy-binding 403564791417 \\n--member="serviceAccount:terraform-deployer@mh-oct-2025.iam.gserviceaccount.com" \\n--role="roles/storage.objectUser" 
+ 1076  gcloud auth application-default login --impersonate-service-account terraform-deployer@mh-oct-2025.iam.gserviceaccount.com
+ 1077  terraform init
+ 1078  terraform apply

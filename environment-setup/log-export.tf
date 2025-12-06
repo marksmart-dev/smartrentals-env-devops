@@ -3,6 +3,7 @@ resource "random_id" "suffix" {
   byte_length = 4
 }
 
+/*
 module "cs-logsink-logbucketsink" {
   source  = "terraform-google-modules/log-export/google"
   version = "~> 11.0"
@@ -25,3 +26,4 @@ module "cs-logging-destination" {
   retention_days           = 30
   log_sink_writer_identity = module.cs-logsink-logbucketsink.writer_identity
 }
+*/

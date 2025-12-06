@@ -1,3 +1,4 @@
+/*
 module "cs-svc-sales-prod-svc-yr0e" {
   source  = "terraform-google-modules/project-factory/google//modules/svpc_service_project"
   version = "~> 18.0"
@@ -13,9 +14,9 @@ module "cs-svc-sales-prod-svc-yr0e" {
     try(module.cs-vpc-prod-shared.subnets["australia-southeast1/subnet-prod-1"].self_link, ""),
   ]
 
-  domain     = data.google_organization.org.domain
-  group_name = module.cs-gg-sales-prod-service.name
-  group_role = "roles/viewer"
+  # domain     = data.google_organization.org.domain
+  # group_name = local.group_aliases["sales-prod-service"]
+  # group_role = "roles/viewer"
   depends_on = [
     module.cs-org-policy-iam_allowedPolicyMemberDomains,
     module.cs-org-policy-iam_automaticIamGrantsForDefaultServiceAccounts,
@@ -38,9 +39,9 @@ module "cs-svc-sales-nonprod-svc-yr0e" {
     try(module.cs-vpc-nonprod-shared.subnets["australia-southeast1/subnet-non-prod-1"].self_link, ""),
   ]
 
-  domain     = data.google_organization.org.domain
-  group_name = module.cs-gg-sales-nonprod-service.name
-  group_role = "roles/viewer"
+  # domain     = data.google_organization.org.domain
+  # group_name = local.group_aliases["sales-nonprod-service"]
+  # group_role = "roles/viewer"
   depends_on = [
     module.cs-org-policy-iam_allowedPolicyMemberDomains,
     module.cs-org-policy-iam_automaticIamGrantsForDefaultServiceAccounts,
@@ -63,9 +64,9 @@ module "cs-svc-operations-prod-svc-yr0e" {
     try(module.cs-vpc-prod-shared.subnets["australia-southeast2/subnet-prod-2"].self_link, ""),
   ]
 
-  domain     = data.google_organization.org.domain
-  group_name = module.cs-gg-operations-prod-service.name
-  group_role = "roles/viewer"
+  # domain     = data.google_organization.org.domain
+  # group_name = local.group_aliases["operations-prod-service"]
+  # group_role = "roles/viewer"
   depends_on = [
     module.cs-org-policy-iam_allowedPolicyMemberDomains,
     module.cs-org-policy-iam_automaticIamGrantsForDefaultServiceAccounts,
@@ -88,12 +89,13 @@ module "cs-svc-operations-nonprod-svc-yr0e" {
     try(module.cs-vpc-nonprod-shared.subnets["australia-southeast2/subnet-non-prod-2"].self_link, ""),
   ]
 
-  domain     = data.google_organization.org.domain
-  group_name = module.cs-gg-operations-nonprod-service.name
-  group_role = "roles/viewer"
+  # domain     = data.google_organization.org.domain
+  # group_name = local.group_aliases["operations-nonprod-service"]
+  # group_role = "roles/viewer"
   depends_on = [
     module.cs-org-policy-iam_allowedPolicyMemberDomains,
     module.cs-org-policy-iam_automaticIamGrantsForDefaultServiceAccounts,
     module.cs-org-policy-compute_skipDefaultNetworkCreation,
   ]
 }
+*/

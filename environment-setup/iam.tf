@@ -320,6 +320,7 @@ module "cs-projects-iam-9-pubsubviewer" {
   }
 }
 
+/*
 module "cs-service-projects-iam-10-computeinstanceAdminv1" {
   source  = "terraform-google-modules/iam/google//modules/projects_iam"
   version = "~> 8.0"
@@ -329,7 +330,7 @@ module "cs-service-projects-iam-10-computeinstanceAdminv1" {
   ]
   bindings = {
     "roles/compute.instanceAdmin.v1" = [
-      "group:${module.cs-gg-sales-prod-service.id}",
+      "group:${local.group_emails["sales-prod-service"]}",
     ]
   }
 }
@@ -343,7 +344,7 @@ module "cs-service-projects-iam-11-computeinstanceAdminv1" {
   ]
   bindings = {
     "roles/compute.instanceAdmin.v1" = [
-      "group:${module.cs-gg-sales-nonprod-service.id}",
+      "group:${local.group_emails["sales-nonprod-service"]}",
     ]
   }
 }
@@ -357,7 +358,7 @@ module "cs-service-projects-iam-12-computeinstanceAdminv1" {
   ]
   bindings = {
     "roles/compute.instanceAdmin.v1" = [
-      "group:${module.cs-gg-operations-prod-service.id}",
+      "group:${local.group_emails["operations-prod-service"]}",
     ]
   }
 }
@@ -371,7 +372,8 @@ module "cs-service-projects-iam-13-computeinstanceAdminv1" {
   ]
   bindings = {
     "roles/compute.instanceAdmin.v1" = [
-      "group:${module.cs-gg-operations-nonprod-service.id}",
+      "group:${local.group_emails["operations-nonprod-service"]}",
     ]
   }
 }
+*/

@@ -14,6 +14,10 @@ module "cs-project-vpc-host-prod" {
     module.cs-org-policy-iam_automaticIamGrantsForDefaultServiceAccounts,
     module.cs-org-policy-compute_skipDefaultNetworkCreation,
   ]
+  activate_apis = [
+    "compute.googleapis.com",
+    "servicenetworking.googleapis.com",
+  ]
 }
 
 module "cs-project-vpc-host-nonprod" {

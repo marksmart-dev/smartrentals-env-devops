@@ -169,3 +169,35 @@ module "cs-vpc-nonprod-shared" {
     },
   ]
 }
+
+resource "google_compute_router" "router_prod_sydney" {
+  name    = "router-prod-sydney"
+  region  = "australia-southeast1"
+  network = module.cs-vpc-prod-shared.network_name
+  project = module.cs-project-vpc-host-prod.project_id
+}
+
+resource "google_compute_router_nat" "nat_prod_sydney" {
+  name                               = "nat-prod-sydney"
+  router                             = google_compute_router.router_prod_sydney.name
+  region                             = google_compute_router.router_prod_sydney.region
+  nat_ip_allocate_option             = "AUTO_ONLY"
+  source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
+  project                            = module.cs-project-vpc-host-prod.project_id
+}
+
+resource "google_compute_router" "router_prod_melbourne" {
+  name    = "router-prod-melbourne"
+  region  = "australia-southeast2"
+  network = module.cs-vpc-prod-shared.network_name
+  project = module.cs-project-vpc-host-prod.project_id
+}
+
+resource "google_compute_router_nat" "nat_prod_melbourne" {
+  name                               = "nat-prod-melbourne"
+  router                             = google_compute_router.router_prod_melbourne.name
+  region                             = google_compute_router.router_prod_melbourne.region
+  nat_ip_allocate_option             = "AUTO_ONLY"
+  source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
+  project                            = module.cs-project-vpc-host-prod.project_id
+}
